@@ -1,7 +1,24 @@
+function moeda(atual){
+  return atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+}
+
 function total(){
    let c = document.getElementById("valor").value;
    let j = document.getElementById("juros").value;
    let t = document.getElementById("meses").value;
+   if(!Number(c)){
+       alert("É NUMERO KRL, POR ISSO Q SUA MAE NN TE AMA")
+       document.getElementById("valor").value = "";
+       document.getElementById("valor").focus();
+      return
+   }
+   if(!Number(j)){
+    alert("É NUMERO KRL, POR ISSO Q SUA MAE NN TE AMA")
+    document.getElementById("juros").value = "";
+    document.getElementById("juros").focus();
+   return
+}
+
    let r = 0;
    for(let i = 1; i <= t; i++){
        r = c * (1 + (j/100));
