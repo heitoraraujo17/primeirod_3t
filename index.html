@@ -1,54 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiro D</title>
+  <script src="estudo.js"></script>
+</head>
+<body>
 
+<div id="calculadora">
+   <span id="total">Total:</span> <br>
+Capital:  <input id="valor" type="text">     <br>
+   Juros Mensais:  <input id="juros" type="text">     <br>
+Nr. de Meses:  <input id="meses" type="text">     <br>
+   <button onclick="total()">Calcula</button>
+</div>
+<div>
+   <span id="mes">Meses</span>
+</div>
 
-function moeda(atual){
-   return atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-   }
-   
-   function total(){
-     let c = document.getElementById("valor").value;
-     let j = document.getElementById("juros").value;
-     let t = document.getElementById("meses").value;
-     let r = moeda;
-   
-   
-     if(!Number(c)){
-         
-      alert("O capital deve ser numeros.");
-      document.getElementById("valor").value = "";
-      document.getElementById("valor").focus();
-      return;
-     }
-   
-     if(!Number(j)){   
-       alert("O juros deve ser numeros.");
-       document.getElementById("juros").value = "";
-       document.getElementById("juros").focus();
-       return;
-      }
-   
-      if(!Number(t)){
-       alert("O meses deve ser numeros.");
-       document.getElementById("meses").value = "";
-       document.getElementById("meses").focus();
-       return;
-      
-     }
-     let mes = "";
-   
-     for(let i = 1; i <= t; i++){
-         r = c * (1 + (j/100));
-        mes += "mês" = i =" valor "+ moeda(r) + "<br>";
-         //  document.write("Mês " + i + " valor: " + moeda(r) +"<br>");
-         c = r;
-     }
-     document.getElementById("total").innerHTML= "Total: " + moeda(r);
-     // document.write("Resultado: " + moeda(r));
-   
-     for(let i = 1; i <= t; i++){
-       r = c * (1 + (j/100));
-    
-      
-   };
-     
-   }
-   
+   <br><br><br>
+   <span id="resultado"></span><br><br>
+   valor 1: <input id="v1" type="text"><br>
+   valor 2: <input id="v2" type="text"><br>
+    <button onclick="adicao()">Soma</button>
+    <button onclick="subtracao()">Subtração</button>
+    <button onclick="divisao()">Divisão</button>
+    <button onclick="multiplicacao()">Multiplicação</button>
+    <button onclick="porcentagem()">Porcentagem</button>
+</body>
+</html>
