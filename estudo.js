@@ -8,7 +8,7 @@ function total(){
   let c = document.getElementById("valor").value;
   let j = document.getElementById("juros").value;
   let t = document.getElementById("meses").value;
-  let r = moeda;
+  let r = c;
 
 
   if(!Number(c)){
@@ -43,11 +43,8 @@ function total(){
   }
   document.getElementById("total").innerHTML= "Total: " + moeda(r);
   // document.write("Resultado: " + moeda(r));
-
-  for(let i = 1; i <= t; i++){
-    r = c * (1 + (j/100));
  
    
-};
-  
 }
+  
+
